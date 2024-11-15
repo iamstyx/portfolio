@@ -4,13 +4,13 @@ const Hero = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-3xl px-4 text-center p-8">
-        <h1 className="text-7xl font-normal text-gray-800/90 mb-6 font-sketch">
+        <h1 className="text-7xl font-normal text-gray-900 mb-6 font-sketch">
           Sushant Verma
         </h1>
-        <h2 className="text-3xl text-gray-600/90 mb-8 font-sketch">
+        <h2 className="text-3xl text-gray-800/90 mb-8 font-sketch">
           Web Developer
         </h2>
-        <p className="text-lg text-gray-600/80 mb-8">
+        <p className="text-lg text-gray-700/80 mb-8">
           Crafting beautiful and performant web experiences with modern technologies
         </p>
         <div className="flex justify-center gap-4">
