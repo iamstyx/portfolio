@@ -12,7 +12,7 @@ function Cube() {
 
   return (
     <mesh ref={meshRef} rotation={[0.5, 0.5, 0]}>
-      <boxGeometry args={[3,3,3]} />
+      <boxGeometry args={[2,2,2]} />
       <meshStandardMaterial 
         color="#88c6db"
         opacity={0.3}
