@@ -1,9 +1,14 @@
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useRef } from 'react'
 
 function Cube() {
   const meshRef = useRef()
+
+  useFrame((state) => {
+    meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2
+    meshRef.current.rotation.y = Math.cos(state.clock.elapsedTime) * 0.2
+  })
 
   return (
     <mesh ref={meshRef} rotation={[0.5, 0.5, 0]}>
