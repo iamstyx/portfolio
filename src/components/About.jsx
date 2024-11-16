@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
+import { useParallax } from '../hooks/useParallax'
 
 const skillCategories = {
   "Frontend": ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js'],
@@ -10,8 +11,11 @@ const skillCategories = {
 }
 
 const About = () => {
+  const { ref: textRef, y: textY } = useParallax(50)
+  const { ref: skillsRef, y: skillsY } = useParallax(-50)
+
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-white/50">
+    <section id="about" className="min-h-screen flex items-center justify-center">
       <AnimatedSection className="max-w-5xl px-6 py-20">
         <motion.h2 
           className="text-5xl font-sketch text-center mb-16 text-gray-900"
@@ -24,8 +28,7 @@ const About = () => {
         </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-16 items-start">
-          {/* Left Column - About Text */}
-          <div className="space-y-6">
+          <motion.div ref={textRef} style={{ y: textY }} className="space-y-6">
             <motion.p 
               className="text-lg text-gray-700/80 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
@@ -48,10 +51,9 @@ const About = () => {
               interactive experiences, and has evolved into a professional pursuit 
               of crafting elegant solutions for complex problems.
             </motion.p>
-          </div>
+          </motion.div>
 
-          {/* Right Column - Skills */}
-          <div className="space-y-12">
+          <motion.div ref={skillsRef} style={{ y: skillsY }} className="space-y-12">
             {Object.entries(skillCategories).map(([category, skills], categoryIndex) => (
               <motion.div 
                 key={category}
@@ -83,7 +85,7 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </AnimatedSection>
     </section>

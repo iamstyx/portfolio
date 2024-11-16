@@ -1,12 +1,14 @@
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
 import { zazoo , colorMixer , factoryTool } from '../assets/asset'
+import { useState } from 'react'
 
 const projects = [
   {
     title: 'ZAZOO AI',
     description: 'Al-driven meeting summaries and in-app transcriptions, simplified',
     tech: ['React', 'Express', 'MongoDB', 'Node.js',  'Tailwind CSS'],
+    category: 'Full Stack',
     image: zazoo,
     liveUrl: 'https://www.zazoo.in/',
     githubUrl: '#'
@@ -15,6 +17,7 @@ const projects = [
     title: 'Color Mixer',
     description: 'Inspiration in every stroke',
     tech: ['React', 'Express', 'MongoDB', 'Node.js', 'Tailwind CSS'],
+    category: 'Frontend',
     image: colorMixer,
     liveUrl: 'https://youva.vercel.app/colormixer',
     githubUrl: '#'
@@ -23,6 +26,7 @@ const projects = [
     title: 'Factory Tool',
     description: 'The Factory Tool was developed for Navneet factory workers to streamline their workflow. It allows users to view selected rows from Excel files in a clear, formatted manner, eliminating the need to read entire files.',
     tech: ['React', 'Express', 'MongoDB', 'Node.js',  'Tailwind CSS'],
+    category: 'Backend',
     image: factoryTool,
     liveUrl: 'https://factory-product-excel-reader.vercel.app/',
     githubUrl: '#'
@@ -60,15 +64,54 @@ const ProjectCard = ({ project, index }) => (
   </motion.div>
 )
 
-const Projects = () => {
+const ProjectFilters = ({ activeFilter, setActiveFilter }) => {
+  const filters = ['All', 'Frontend', 'Backend', 'Full Stack']
+  
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center py-20">
+    <motion.div 
+      className="flex justify-center gap-4 mb-12 flex-wrap"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      {filters.map(filter => (
+        <motion.button
+          key={filter}
+          onClick={() => setActiveFilter(filter)}
+          className={`px-4 py-2 rounded-lg font-medium ${
+            activeFilter === filter 
+              ? 'bg-blue-600 text-white' 
+              : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+          }`}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {filter}
+        </motion.button>
+      ))}
+    </motion.div>
+  )
+}
+
+const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState('All')
+  
+  const filteredProjects = projects.filter(project => 
+    activeFilter === 'All' ?
+      true :
+      project.category === activeFilter
+  )
+  
+  return (
+    <section id="projects" className="min-h-screen flex items-center justify-center">
       <AnimatedSection className="max-w-6xl px-6">
         <h2 className="text-5xl font-sketch text-center mb-12 text-gray-900">
           My Projects
         </h2>
+        <ProjectFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
