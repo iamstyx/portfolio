@@ -45,7 +45,7 @@ const About = () => {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* About Me - Spans 2 columns */}
+          {/* About*/}
           <BentoBox className="md:col-span-2 lg:col-span-2">
             <h3 className="text-2xl font-sketch mb-4 text-gray-800 flex items-center gap-3">
               <span>👋</span>
@@ -58,12 +58,12 @@ const About = () => {
             </p>
           </BentoBox>
 
-          {/* Profile Picture or Avatar Box */}
+          {/* Profile Picture */}
           <BentoBox className="aspect-square flex items-center justify-center" delay={0.1}>
             <div className="text-6xl">👨‍💻</div>
           </BentoBox>
 
-          {/* Skill Categories */}
+          {/* Skill */}
           {Object.entries(skillCategories).map(([category, { icon, skills }], index) => (
             <BentoBox key={category} delay={0.2 + index * 0.1}>
               <h3 className="text-2xl font-sketch mb-4 text-gray-800 flex items-center gap-3">
@@ -83,7 +83,7 @@ const About = () => {
             </BentoBox>
           ))}
 
-          {/* Journey Box */}
+          {/* Journey */}
           <BentoBox className="md:col-span-2 lg:col-span-2" delay={0.5}>
             <h3 className="text-2xl font-sketch mb-4 text-gray-800 flex items-center gap-3">
               <span>🚀</span>
@@ -96,7 +96,7 @@ const About = () => {
             </p>
           </BentoBox>
 
-          {/* Contact CTA Box */}
+          {/* Contact */}
           <BentoBox className="text-center flex flex-col items-center justify-center" delay={0.6}>
             <h3 className="text-2xl font-sketch mb-4 text-gray-800">Let's Connect!</h3>
             <motion.a

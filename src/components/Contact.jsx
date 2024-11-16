@@ -45,7 +45,6 @@ const Contact = () => {
             className="space-y-6"
             onSubmit={(e) => {
               e.preventDefault()
-              // Add your form submission logic here
             }}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
