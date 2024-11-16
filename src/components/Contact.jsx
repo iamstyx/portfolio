@@ -5,13 +5,13 @@ const Contact = () => {
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center bg-white/50">
       <div className="max-w-4xl px-6 py-20">
-        <h2 className="text-5xl font-sketch text-center mb-12 text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-sketch text-center mb-12 text-gray-900">
           Get In Touch
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <p className="text-lg text-gray-700/80">
+            <p className="text-base md:text-lg text-gray-700/80">
               I'm always interested in hearing about new projects and opportunities.
               Feel free to reach out if you'd like to connect!
             </p>

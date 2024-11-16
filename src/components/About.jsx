@@ -18,7 +18,7 @@ const About = () => {
     <section id="about" className="min-h-screen flex items-center justify-center">
       <AnimatedSection className="max-w-5xl px-6 py-20">
         <motion.h2 
-          className="text-5xl font-sketch text-center mb-16 text-gray-900"
+          className="text-4xl md:text-5xl font-sketch text-center mb-16 text-gray-900"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-16 items-start">
           <motion.div ref={textRef} style={{ y: textY }} className="space-y-6">
             <motion.p 
-              className="text-lg text-gray-700/80 leading-relaxed"
+              className="text-base md:text-lg text-gray-700/80 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -41,7 +41,7 @@ const About = () => {
               web applications using React and related technologies.
             </motion.p>
             <motion.p 
-              className="text-lg text-gray-700/80 leading-relaxed"
+              className="text-base md:text-lg text-gray-700/80 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -62,12 +62,12 @@ const About = () => {
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="font-sketch text-3xl mb-6 text-gray-800">{category}</h3>
+                <h3 className="font-sketch text-2xl md:text-3xl mb-6 text-gray-800">{category}</h3>
                 <div className="flex flex-wrap gap-3">
                   {skills.map((skill, index) => (
                     <motion.span 
                       key={skill}
-                      className="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg font-medium hover:bg-blue-100 transition-colors cursor-default"
+                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-lg font-medium hover:bg-blue-100 transition-colors cursor-default"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ 
