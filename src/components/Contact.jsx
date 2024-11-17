@@ -1,5 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { MdEmail } from 'react-icons/md'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 const Contact = () => {
   return (
@@ -21,21 +23,21 @@ const Contact = () => {
                 href="mailto:sushantt.verma@gmail.com" 
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600"
               >
-                <span className="text-lg">📧</span>
+                <MdEmail className="text-xl" />
                 Mail
               </a>
               <a 
                 href="https://www.linkedin.com/in/sushant-verma-523151198/" 
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600"
               >
-                <span className="text-lg">💼</span>
+                <FaLinkedin className="text-xl" />
                 LinkedIn
               </a>
               <a 
                 href="https://github.com/iamstyx" 
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600"
               >
-                <span className="text-lg">👨‍💻</span>
+                <FaGithub className="text-xl" />
                 GitHub
               </a>
             </div>
