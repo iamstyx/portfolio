@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 import BentoBox from './BentoBox'
+import ResumeDownload from './ResumeDownload'
 
 const skillCategories = {
   "Frontend": {
@@ -71,18 +72,10 @@ const About = () => {
             </BentoBox>
           ))}
 
-          {/* Journey */}
-          <BentoBox className="md:col-span-2 lg:col-span-2" delay={0.5}>
-            <h3 className="text-2xl font-sketch mb-4 text-gray-800 flex items-center gap-3">
-              <span>🚀</span>
-              My Journey
-            </h3>
-            <p className="text-lg text-gray-700/80 leading-relaxed">
-              My journey in web development started with a curiosity for creating 
-              interactive experiences, and has evolved into a professional pursuit 
-              of crafting elegant solutions for complex problems.
-            </p>
-          </BentoBox>
+
+
+          {/* Resume Download */}
+          <ResumeDownload />
 
           {/* Contact */}
           <BentoBox className="text-center flex flex-col items-center justify-center" delay={0.6}>

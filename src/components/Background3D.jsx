@@ -1,41 +1,83 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import * as THREE from 'three'
 
-function Cube() {
-  const meshRef = useRef()
+const Background3D = () => {
+  const containerRef = useRef()
 
-  useFrame((state) => {
-    meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2
-    meshRef.current.rotation.y = Math.cos(state.clock.elapsedTime) * 0.2
-  })
+  useEffect(() => {
+    // Scene setup
+    const scene = new THREE.Scene()
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    const renderer = new THREE.WebGLRenderer({ 
+      alpha: true,
+      antialias: true 
+    })
+    
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setClearColor(0xffffff, 0.1)
+    containerRef.current.appendChild(renderer.domElement)
 
-  return (
-    <mesh ref={meshRef} rotation={[0.5, 0.5, 0]}>
-      <boxGeometry args={[2,2,2]} />
-      <meshStandardMaterial 
-        color="#88c6db"
-        opacity={0.3}
-        transparent
-        wireframe
-      />
-    </mesh>
-  )
+    // Create particles
+    const particlesGeometry = new THREE.BufferGeometry()
+    const count = 3000
+    const positions = new Float32Array(count * 3)
+
+    for(let i = 0; i < count * 3; i += 3) {
+      positions[i] = (Math.random() - 0.5) * 20
+      positions[i + 1] = (Math.random() - 0.5) * 20
+      positions[i + 2] = (Math.random() - 0.5) * 20
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 0.03,
+      sizeAttenuation: true,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending
+    })
+
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+    scene.add(particles)
+
+    // Camera position
+    camera.position.z = 5
+
+    // Handle resize
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(window.innerWidth, window.innerHeight)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    // Animation
+    const animate = () => {
+      requestAnimationFrame(animate)
+      
+      particles.rotation.x += 0.0001
+      particles.rotation.y += 0.0001
+      
+      renderer.render(scene, camera)
+    }
+    
+    animate()
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      containerRef.current?.removeChild(renderer.domElement)
+      scene.remove(particles)
+      particlesGeometry.dispose()
+      particlesMaterial.dispose()
+      renderer.dispose()
+    }
+  }, [])
+
+  return <div ref={containerRef} className="fixed inset-0 -z-10" />
 }
 
-export default function Background3D() {
-  return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10">
-      <Canvas camera={{ position: [0, 0, 5] }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <Cube />
-        <OrbitControls 
-          enableZoom={false}
-          autoRotate
-          autoRotateSpeed={0.5}
-        />
-      </Canvas>
-    </div>
-  )
-}
+export default Background3D
