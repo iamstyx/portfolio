@@ -10,7 +10,7 @@ import CustomCursor from './components/CustomCursor'
 import LoadingScreen from './components/LoadingScreen'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
-
+import Experience from './components/Experience'
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -44,6 +44,7 @@ const App = () => {
             <main className="overflow-x-hidden">
               <Hero />
               <About />
+              <Experience />
               <Projects />
               <Contact />
             </main>

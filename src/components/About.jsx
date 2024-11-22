@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
+import BentoBox from './BentoBox'
 
 const skillCategories = {
   "Frontend": {
@@ -16,19 +17,6 @@ const skillCategories = {
     skills: ["Git", "VS Code", "Figma", "Postman"]
   }
 }
-
-const BentoBox = ({ children, className = "", delay = 0 }) => (
-  <motion.div
-    className={`bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg ${className}`}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay }}
-    viewport={{ once: true }}
-    whileHover={{ scale: 1.02 }}
-  >
-    {children}
-  </motion.div>
-)
 
 const About = () => {
   return (
@@ -63,7 +51,7 @@ const About = () => {
             <div className="text-6xl">👨‍💻</div>
           </BentoBox>
 
-          {/* Skill */}
+          {/* Skills */}
           {Object.entries(skillCategories).map(([category, { icon, skills }], index) => (
             <BentoBox key={category} delay={0.2 + index * 0.1}>
               <h3 className="text-2xl font-sketch mb-4 text-gray-800 flex items-center gap-3">
