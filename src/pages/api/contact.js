@@ -7,7 +7,6 @@ export default async function handler(req, res) {
 
   const { name, email, message } = req.body
 
-  // Basic validation
   if (!name || !email || !message) {
     return res.status(400).json({ message: 'All fields are required' })
   }
@@ -39,9 +38,9 @@ export default async function handler(req, res) {
       `
     })
     
-    res.status(200).json({ message: 'Email sent successfully' })
+    return res.status(200).json({ message: 'Email sent successfully' })
   } catch (error) {
     console.error('Email error:', error)
-    res.status(500).json({ message: 'Failed to send email' })
+    return res.status(500).json({ message: 'Failed to send email' })
   }
 } 
