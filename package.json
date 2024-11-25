@@ -6,9 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "server": "node src/server/index.js",
-    "start": "concurrently \"npm run dev\" \"npm run server\"",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
