@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <div id="home" className="relative h-screen w-full overflow-hidden bg-black">
-      <BackgroundLines className="absolute inset-0 z-0" />
+      <BackgroundLines className="absolute inset-0 z-0 h-screen" />
       
       <div className="relative z-40 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <h1 className="mt-4 text-center text-4xl font-bold sm:text-5xl md:text-7xl">
