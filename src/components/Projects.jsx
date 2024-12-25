@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { nftverse, sketchify, brandly, aiAssistant } from "../assets";
 const ProjectCard = ({ title, description, tags, image }) => {
   return (
     <motion.div
@@ -8,20 +8,26 @@ const ProjectCard = ({ title, description, tags, image }) => {
     >
       <div className="space-y-4">
         {/* Project Image */}
-        <div className="relative aspect-video overflow-hidden rounded-2xl">
+        <div className="relative w-full h-[250px] sm:h-[400px] overflow-hidden rounded-2xl">
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+            className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300"
           />
         </div>
 
         {/* Content */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <h3 className="text-xl font-bold text-white">{title}</h3>
           
+          {description && (
+            <p className="text-neutral-400 text-sm line-clamp-2">
+              {description}
+            </p>
+          )}
+          
           {/* Tags */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-2">
             {tags.map((tag, index) => (
               <span 
                 key={index}
@@ -58,24 +64,28 @@ const ProjectCard = ({ title, description, tags, image }) => {
 const Projects = () => {
   const projects = [
     {
-      title: "Shoptidy",
-      tags: ["TypeScript", "React", "Redux", "Supabase", "TailwindCSS", "shadcn/ui"],
-      image: "/project1.jpg"
+      title: "NFTverse",
+      description: "A decentralized NFT marketplace enabling users to browse and buy digital assets, built with blockchain technology and Ethereum wallet support.",
+      tags: ["React 18", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Ethereum"],
+      image: nftverse
     },
     {
-      title: "SocialSphere",
-      tags: ["JavaScript", "React", "CRUD", "Appwrite", "TailwindCSS", "TanStack"],
-      image: "/project2.jpg"
+      title: "Sketchify",
+      description: "A web-based drawing application inspired by Excalidraw, featuring hand-drawn style diagrams with multiple tools and canvas controls.",
+      tags: ["React 18", "Rough.js", "Perfect Freehand", "Tailwind CSS", "Vite"],
+      image: sketchify
     },
     {
-      title: "NextCut",
-      tags: ["TypeScript", "NextJS", "Appwrite", "TailwindCSS", "Advanced forms"],
-      image: "/project3.jpg"
+      title: "Brandly",
+      description: "A modern logo creation platform with professional design tools, enabling users to create custom logos with extensive customization options.",
+      tags: ["React.js", "Tailwind CSS", "Framer Motion", "html2canvas", "Lucide Icons"],
+      image: brandly
     },
     {
-      title: "NextCut",
-      tags: ["TypeScript", "NextJS", "Appwrite", "TailwindCSS", "Advanced forms"],
-      image: "/project3.jpg"
+      title: "AI Meeting Assistant",
+      description: "An AI-powered platform for transcribing and analyzing meetings, boosting team productivity through actionable insights.",
+      tags: ["React.js", "Vite", "TailwindCSS", "Microsoft Cognitive Services", "OpenAI API"],
+      image: aiAssistant
     }
   ];
 
@@ -83,7 +93,7 @@ const Projects = () => {
     <section id="work" className="w-full bg-black py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl font-bold text-white">My portfolio</h2>
+          <h2 className="text-3xl font-bold text-white">My Projects</h2>
           <button className="px-4 py-2 rounded-full bg-neutral-900/50 text-white text-sm backdrop-blur-sm hover:bg-neutral-800/50 transition-colors">
             All Projects →
           </button>
