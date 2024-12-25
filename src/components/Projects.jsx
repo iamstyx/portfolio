@@ -1,53 +1,51 @@
 import { motion } from "framer-motion";
 import { nftverse, sketchify, brandly, aiAssistant, arrowIcon } from "../assets";
-const ProjectCard = ({ title, description, tags, image }) => {
+const ProjectCard = ({ title, description, tags, image, link }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
       className="group relative overflow-hidden rounded-3xl bg-neutral-900/50 p-6 hover:shadow-xl transition-all backdrop-blur-sm"
     >
-      <div className="space-y-4">
-        {/* Project Image */}
-        <div className="relative w-full h-[250px] sm:h-[400px] overflow-hidden rounded-2xl">
-          <img 
-            src={image} 
-            alt={title} 
-            className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="block">
+        <div className="space-y-4">
+          {/* Project Image */}
+          <div className="relative w-full h-[250px] sm:h-[400px] overflow-hidden rounded-2xl">
+            <img 
+              src={image} 
+              alt={title} 
+              className="absolute inset-0 w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
 
-        {/* Content */}
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-white">{title}</h3>
-          
-          {description && (
-            <p className="text-neutral-400 text-sm line-clamp-2">
-              {description}
-            </p>
-          )}
-          
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {tags.map((tag, index) => (
-              <span 
-                key={index}
-                className="px-3 py-1 bg-black/50 text-white rounded-full text-xs backdrop-blur-sm"
-              >
-                {tag}
-              </span>
-            ))}
+          {/* Content */}
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-white">{title}</h3>
+            
+            {description && (
+              <p className="text-neutral-400 text-sm line-clamp-2">
+                {description}
+              </p>
+            )}
+            
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {tags.map((tag, index) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1 bg-black/50 text-white rounded-full text-xs backdrop-blur-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow Icon */}
+          <div className="absolute top-8 right-8 p-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <img src={arrowIcon} alt="arrow-icon" className="w-4 h-4 [filter:invert(1)]" />
           </div>
         </div>
-
-        {/* Arrow Icon */}
-        <div className="absolute top-8 right-8 p-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-          <img 
-            src={arrowIcon} 
-            alt="arrow-icon" 
-            className="w-4 h-4 [filter:invert(1)]" 
-          />
-        </div>
-      </div>
+      </a>
     </motion.div>
   );
 };
@@ -58,25 +56,29 @@ const Projects = () => {
       title: "NFTverse",
       description: "A decentralized NFT marketplace enabling users to browse and buy digital assets, built with blockchain technology and Ethereum wallet support.",
       tags: ["React 18", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Ethereum"],
-      image: nftverse
+      image: nftverse,
+      link: "https://nftverse-five.vercel.app/"
     },
     {
       title: "Sketchify",
       description: "A web-based drawing application inspired by Excalidraw, featuring hand-drawn style diagrams with multiple tools and canvas controls.",
       tags: ["React 18", "Rough.js", "Perfect Freehand", "Tailwind CSS", "Vite"],
-      image: sketchify
+      image: sketchify,
+      link: "https://sketchify-gamma.vercel.app/"
     },
     {
       title: "Brandly",
       description: "A modern logo creation platform with professional design tools, enabling users to create custom logos with extensive customization options.",
       tags: ["React.js", "Tailwind CSS", "Framer Motion", "html2canvas", "Lucide Icons"],
-      image: brandly
+      image: brandly,
+      link: "https://brandly-kohl.vercel.app/"
     },
     {
       title: "AI Meeting Assistant",
       description: "An AI-powered platform for transcribing and analyzing meetings, boosting team productivity through actionable insights.",
       tags: ["React.js", "Vite", "TailwindCSS", "Microsoft Cognitive Services", "OpenAI API"],
-      image: aiAssistant
+      image: aiAssistant,
+      link: "https://ai-meeting-eta.vercel.app/meetings"
     }
   ];
 
