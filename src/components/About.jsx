@@ -2,8 +2,17 @@ import { motion } from "framer-motion";
 
 const About = () => {
   const skills = [
-    "React", "JavaScript", "TypeScript", "Node.js", 
-    "Tailwind CSS", "Next.js", "Git", "REST APIs"
+    "React.js", "TypeScript", "JavaScript", "Next.js",
+    
+    "Tailwind CSS", "Framer Motion",
+    
+    "Node.js", "Express", "MongoDB", "REST APIs",
+    
+    "Vite", "Git",
+    
+    "OpenAI API", "Microsoft Azure",
+    
+    "Ethereum", "Web3"
   ];
 
   return (
