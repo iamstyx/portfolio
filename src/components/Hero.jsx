@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BackgroundLines } from "./ui/background-lines";
 import { FlipWords } from "./ui/flip-words";
 import { scrollToSection } from "../utils/scroll";
+import { rightArrow, download } from "../assets";
 
 const Hero = () => {
   const words = ["Web Developer", "UI/UX Designer", "Full Stack Developer"];
@@ -27,24 +28,14 @@ const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={() => scrollToSection('work')}
-            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            className="group inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             <span>See My Work</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="ml-2 transition-transform group-hover:translate-x-1"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
+            <img 
+              src={rightArrow} 
+              alt="right-arrow" 
+              className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 [filter:invert(0.6)] group-hover:[filter:invert(0.8)]" 
+            />
           </motion.button>
 
           <motion.a
@@ -53,22 +44,11 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             className="group flex items-center gap-2 text-white transition-all hover:text-blue-500"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="transition-transform group-hover:-translate-y-1"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
+            <img 
+              src={download} 
+              alt="download" 
+              className="ml-2 w-4 h-4 transition-transform group-hover:translate-y-1 [filter:invert(1)] group-hover:[filter:brightness(0)_invert(0.4)_sepia(1)_saturate(20)_hue-rotate(180deg)]" 
+            />
             <span>Download CV</span>
           </motion.a>
         </div>

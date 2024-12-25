@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { nftverse, sketchify, brandly, aiAssistant } from "../assets";
+import { nftverse, sketchify, brandly, aiAssistant, arrowIcon } from "../assets";
 const ProjectCard = ({ title, description, tags, image }) => {
   return (
     <motion.div
@@ -41,20 +41,11 @@ const ProjectCard = ({ title, description, tags, image }) => {
 
         {/* Arrow Icon */}
         <div className="absolute top-8 right-8 p-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-white"
-          >
-            <path d="M7 17L17 7" />
-            <path d="M7 7h10v10" />
-          </svg>
+          <img 
+            src={arrowIcon} 
+            alt="arrow-icon" 
+            className="w-4 h-4 [filter:invert(1)]" 
+          />
         </div>
       </div>
     </motion.div>
