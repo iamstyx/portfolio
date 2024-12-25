@@ -47,7 +47,9 @@ const Hero = () => {
             </svg>
           </motion.button>
 
-          <motion.button
+          <motion.a
+            href="/sushant-resume.pdf"
+            download="Sushant_Resume.pdf"
             whileHover={{ scale: 1.05 }}
             className="group flex items-center gap-2 text-white transition-all hover:text-blue-500"
           >
@@ -68,7 +70,7 @@ const Hero = () => {
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
             <span>Download CV</span>
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </div>
