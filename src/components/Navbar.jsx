@@ -14,17 +14,17 @@ const Navbar = () => {
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
-          onClick={() => scrollToSection('work')}
-          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
-        >
-          Work
-        </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('about')}
           className="text-sm font-medium text-white transition-colors hover:text-blue-500"
         >
           About
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          onClick={() => scrollToSection('work')}
+          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
+        >
+          Work
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
