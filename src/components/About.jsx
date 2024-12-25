@@ -7,7 +7,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative min-h-screen w-full bg-black py-20">
+    <section id="about" className="relative min-h-screen w-full flex  items-center justify-center bg-black py-20">
       <div className="relative z-40 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

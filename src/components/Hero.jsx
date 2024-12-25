@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="relative z-50 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <h1 className="mt-4 text-center text-4xl font-bold sm:text-5xl md:text-7xl">
           <span className="text-white">Hi, I'm </span>
-          <span className="text-blue-500">Sejal</span>
+          <span className="text-blue-500">Sushant</span>
           <br />
           <span className="text-white">I'm </span>
           <FlipWords words={words} className="text-blue-500" /> <br />

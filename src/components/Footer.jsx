@@ -17,7 +17,7 @@ const Footer = () => {
           
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">Sejal</h3>
+            <h3 className="text-2xl font-bold text-white">Sushant</h3>
             <p className="text-neutral-400 max-w-xs">
               Creating digital experiences that make a difference through innovative web development.
             </p>
@@ -63,7 +63,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-neutral-400 text-sm">
-              © 2024 Sejal. All rights reserved.
+              © 2024 Sushant. All rights reserved.
             </p>
             <div className="flex gap-4 text-sm text-neutral-400">
               <motion.a 
