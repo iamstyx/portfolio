@@ -15,14 +15,15 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        'YOUR_PUBLIC_KEY'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setSubmitStatus('success');
       formRef.current.reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -58,13 +59,13 @@ const Contact = () => {
             >
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-400">
+                  <label htmlFor="user_name" className="block text-sm font-medium text-neutral-400">
                     Name
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
+                    name="user_name"
+                    id="user_name"
                     required
                     className="mt-1 block w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-4 py-3 text-white placeholder-neutral-500 backdrop-blur-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="Your Name"
@@ -72,13 +73,13 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-neutral-400">
+                  <label htmlFor="user_email" className="block text-sm font-medium text-neutral-400">
                     Email
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    id="email"
+                    name="user_email"
+                    id="user_email"
                     required
                     className="mt-1 block w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-4 py-3 text-white placeholder-neutral-500 backdrop-blur-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="Your Email"

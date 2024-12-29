@@ -8,6 +8,13 @@ const Footer = () => {
     { name: 'Twitter', url: 'https://x.com/styxuu_' },
   ];
 
+  const services = [
+    "Frontend Development",
+    "Full Stack Development",
+    "UI/UX Design",
+    "Web3 Development"
+  ];
+
   return (
     <footer id="contact" className="relative w-full overflow-hidden">
       <BackgroundBeams />
@@ -23,17 +30,18 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Quick Links */}
+          {/* What I Do Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="flex gap-4 ">
-              {['Home', 'About', 'Projects', 'Contact'].map((link) => (
+            <h4 className="text-lg font-semibold text-white">What I Do</h4>
+            <ul className="space-y-2">
+              {services.map((service) => (
                 <motion.li 
-                  key={link}
+                  key={service}
                   whileHover={{ x: 5 }}
-                  className="text-neutral-400 hover:text-blue-500 cursor-pointer"
+                  className="text-neutral-400 hover:text-blue-500 cursor-default flex items-center gap-2"
                 >
-                  {link}
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  {service}
                 </motion.li>
               ))}
             </ul>
@@ -42,7 +50,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Connect</h4>
-            <div className="flex gap-4 ">
+            <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
