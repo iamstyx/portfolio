@@ -81,7 +81,7 @@ const Projects = () => {
     {
       title: "NFTverse",
       description: "A decentralized NFT marketplace enabling users to browse and buy digital assets, built with blockchain technology and Ethereum wallet support.",
-      tags: ["React 18", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Ethereum"],
+      tags: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Ethereum"],
       image: nftverse,
       link: "https://nftverse-five.vercel.app/",
       github: "https://github.com/iamstyx/NFTverse"
@@ -89,7 +89,7 @@ const Projects = () => {
     {
       title: "Sketchify",
       description: "A web-based drawing application inspired by Excalidraw, featuring hand-drawn style diagrams with multiple tools and canvas controls.",
-      tags: ["React 18", "Rough.js", "Perfect Freehand", "Tailwind CSS", "Vite"],
+      tags: ["React.js", "Rough.js", "Perfect Freehand", "Tailwind CSS", "Vite"],
       image: sketchify,
       link: "https://sketchify-gamma.vercel.app/",
       github: "https://github.com/iamstyx/Sketchify"
