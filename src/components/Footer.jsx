@@ -50,7 +50,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
@@ -73,22 +73,7 @@ const Footer = () => {
             <p className="text-neutral-400 text-sm">
               © 2024 Sushant. All rights reserved.
             </p>
-            <div className="flex gap-4 text-sm text-neutral-400">
-              <motion.a 
-                whileHover={{ color: '#3b82f6' }}
-                href="#" 
-                className="hover:text-blue-500"
-              >
-                Privacy Policy
-              </motion.a>
-              <motion.a 
-                whileHover={{ color: '#3b82f6' }}
-                href="#" 
-                className="hover:text-blue-500"
-              >
-                Terms of Service
-              </motion.a>
-            </div>
+
           </div>
         </div>
       </div>
