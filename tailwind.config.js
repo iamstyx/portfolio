@@ -16,6 +16,18 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Geist Mono", "monospace"],
+        mono: ["Geist Mono", "monospace"],
+      },
+      letterSpacing: {
+        'wider': '0.07em',
+        'widest': '0.15em',
+      },
+      lineHeight: {
+        'relaxed': '1.75',
+        'loose': '2',
+      },
       backgroundImage: {
         'grid-white': "linear-gradient(to right, rgb(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgb(255, 255, 255, 0.1) 1px, transparent 1px)",
         'radial-gradient': "radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to))",

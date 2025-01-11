@@ -8,28 +8,28 @@ const Navbar = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('home')}
-          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
+          className="nav-text text-sm text-white transition-colors hover:text-blue-500"
         >
           Home
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('about')}
-          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
+          className="nav-text text-sm text-white transition-colors hover:text-blue-500"
         >
           About
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('work')}
-          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
+          className="nav-text text-sm text-white transition-colors hover:text-blue-500"
         >
           Work
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('contact')}
-          className="text-sm font-medium text-white transition-colors hover:text-blue-500"
+          className="nav-text text-sm text-white transition-colors hover:text-blue-500"
         >
           Contact
         </motion.button>

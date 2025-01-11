@@ -26,13 +26,13 @@ const About = () => {
           className="space-y-12"
         >
           {/* Section Header */}
-          <div className="text-center">
+          <div className="text-center select-none cursor-default">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">About Me</h2>
             <div className="mt-2 h-1 w-20 bg-blue-500 mx-auto"></div>
           </div>
 
           {/* Professional Background */}
-          <div className="text-neutral-400 space-y-6">
+          <div className="text-neutral-400 space-y-6 select-none cursor-default">
   <p className="text-lg leading-relaxed">
     I'm a passionate Full Stack Developer with 1+ years of experience crafting modern web applications. 
     My expertise lies in building scalable, user-centric solutions that combine cutting-edge frontend technologies 
@@ -56,14 +56,14 @@ const About = () => {
 </div>
 
           {/* Skills Section */}
-          <div>
-            <h3 className="text-2xl font-semibold text-white mb-6">Technical Skills</h3>
+          <div className="select-none">
+            <h3 className="text-2xl font-semibold text-white mb-6 cursor-default">Technical Skills</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="shadow-[inset_0_0_0_2px_#616467] text-white  px-12 py-4 rounded-full tracking-widest uppercase font-bold hover:text-blue-500 dark:text-neutral-200 transition duration-200 "
+                  className="shadow-[inset_0_0_0_2px_#616467] text-white px-12 py-4 rounded-full tracking-widest uppercase font-bold hover:text-blue-500 dark:text-neutral-200 transition duration-200 cursor-default"
                 >
                   {skill}
                 </motion.div>

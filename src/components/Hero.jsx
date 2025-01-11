@@ -12,15 +12,15 @@ const Hero = () => {
       <BackgroundLines className="absolute inset-0 z-0 h-screen" />
       
       <div className="relative z-40 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <h1 className="mt-4 text-center text-4xl font-bold sm:text-5xl md:text-7xl">
+        <h1 className="mt-4 text-center text-4xl heading-text sm:text-5xl md:text-7xl select-none cursor-default">
           <span className="text-white">Hi, I'm </span>
           <span className="text-blue-500">Sushant</span>
           <br />
           <span className="text-white">I'm </span>
-          <FlipWords words={words} className="text-blue-500" /> <br />
+          <FlipWords words={words} className="text-blue-500" />
         </h1>
         
-        <p className="mt-6 max-w-2xl text-center text-lg text-neutral-400">
+        <p className="mt-6 max-w-2xl text-center body-text text-lg text-neutral-400 select-none cursor-default">
           I create intuitive, visually stunning and highly functional web applications.
         </p>
         
@@ -55,6 +55,6 @@ const Hero = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Hero;
