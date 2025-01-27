@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
-import { BackgroundLines } from "./ui/background-lines";
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -32,7 +32,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative min-h-screen w-full flex items-center justify-center bg-black">
-      <BackgroundLines className="absolute inset-0 z-0 h-screen" />
+
       
       <div className="relative z-40 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <motion.div
